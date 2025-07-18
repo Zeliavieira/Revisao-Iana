@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dias e Meses do Ano</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f0f8ff;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #005b99;
+    }
+    .question {
+      background-color: #e0f7fa;
+      border: 2px dashed #00acc1;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+    button {
+      background-color: #4dd0e1;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #80deea;
+    }
+    .feedback {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📅 Atividade: Dias e Meses 📅</h1>
+
+<div class="question">
+  <p>1️⃣ Qual é o primeiro dia da semana?</p>
+  <button onclick="responder(this, true)">🌞 Domingo</button>
+  <button onclick="responder(this, false)">📆 Segunda</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>2️⃣ Que dia vem depois da terça-feira?</p>
+  <button onclick="responder(this, false)">📅 Segunda</button>
+  <button onclick="responder(this, false)">📅 Terça</button>
+  <button onclick="responder(this, true)">📅 Quarta</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣ Em que dias da semana normalmente não tem aula?</p>
+  <button onclick="responder(this, false)">📚 Segunda e Terça</button>
+  <button onclick="responder(this, true)">🎉 Sábado e Domingo</button>
+  <button onclick="responder(this, false)">📖 Quarta e Sexta</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣ Qual é o mês que vem depois de Maio?</p>
+  <button onclick="responder(this, true)">☀️ Junho</button>
+  <button onclick="responder(this, false)">🍁 Abril</button>
+  <button onclick="responder(this, false)">❄️ Julho</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>5️⃣ Qual a abreviação do mês de Setembro?</p>
+  <button onclick="responder(this, true)">📅 SET</button>
+  <button onclick="responder(this, false)">📅 SEP</button>
+  <button onclick="responder(this, false)">📅 SETE</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>6️⃣ Escreva com suas palavras qual é o seu mês preferido e o motivo:</p>
+  <textarea placeholder="Ex: Gosto de dezembro porque é Natal! 🎄"></textarea>
+</div>
+
+<div class="question">
+  <p>7️⃣ Escreva o nome completo dos meses com essas abreviações:</p>
+  <p><strong>JAN:</strong> <input type="text" placeholder="..." /></p>
+  <p><strong>FEV:</strong> <input type="text" placeholder="..." /></p>
+  <p><strong>ABR:</strong> <input type="text" placeholder="..." /></p>
+  <p><strong>DEZ:</strong> <input type="text" placeholder="..." /></p>
+</div>
+
+<div class="question">
+  <p>8️⃣ Qual dia da semana vem antes da sexta-feira?</p>
+  <button onclick="responder(this, true)">📅 Quinta</button>
+  <button onclick="responder(this, false)">📅 Quarta</button>
+  <button onclick="responder(this, false)">📅 Sábado</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>9️⃣ Qual mês é o número 8 do ano?</p>
+  <button onclick="responder(this, false)">📆 Julho</button>
+  <button onclick="responder(this, true)">📆 Agosto</button>
+  <button onclick="responder(this, false)">📆 Setembro</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>🔟 O que vem depois de “domingo”?</p>
+  <button onclick="responder(this, true)">📅 Segunda-feira</button>
+  <button onclick="responder(this, false)">📅 Sábado</button>
+  <button onclick="responder(this, false)">📅 Terça-feira</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>1️⃣1️⃣ Qual é a última abreviação dos meses do ano?</p>
+  <button onclick="responder(this, false)">📅 NOV</button>
+  <button onclick="responder(this, true)">📅 DEZ</button>
+  <button onclick="responder(this, false)">📅 OUT</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>1️⃣2️⃣ Escreva os dias da semana em ordem:</p>
+  <textarea placeholder="Ex: Domingo, Segunda, Terça..."></textarea>
+</div>
+
+<div class="question">
+  <p>1️⃣3️⃣ Qual desses é um mês do inverno no Brasil?</p>
+  <button onclick="responder(this, true)">❄️ Junho</button>
+  <button onclick="responder(this, false)">🌸 Novembro</button>
+  <button onclick="responder(this, false)">☀️ Janeiro</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>1️⃣4️⃣ Qual é o mês que representa o início do ano?</p>
+  <button onclick="responder(this, false)">📅 Dezembro</button>
+  <button onclick="responder(this, false)">📅 Março</button>
+  <button onclick="responder(this, true)">📅 Janeiro</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>1️⃣5️⃣ Complete: O mês de “OUT” é a abreviação de...</p>
+  <input type="text" placeholder="Digite o nome do mês aqui" />
+</div>
+
+<audio id="acerto" src="https://www.myinstants.com/media/sounds/correct-answer.mp3"></audio>
+<audio id="erro" src="https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3"></audio>
+
+<script>
+function responder(botao, correto) {
+  const feedback = botao.parentElement.querySelector('.feedback');
+  const somAcerto = document.getElementById("acerto");
+  const somErro = document.getElementById("erro");
+
+  if (correto) {
+    feedback.textContent = "✅ Muito bem!";
+    feedback.style.color = "green";
+    somAcerto.play();
+    soltaConfete();
+  } else {
+    feedback.textContent = "❌ Ops! Tente novamente.";
+    feedback.style.color = "red";
+    somErro.play();
+  }
+}
+
+function soltaConfete() {
+  const duration = 1000;
+  const colors = ['#f44336', '#4caf50', '#ffeb3b', '#2196f3'];
+
+  for (let i = 0; i < 40; i++) {
+    const part = document.createElement("div");
+    part.style.position = "fixed";
+    part.style.top = Math.random() * window.innerHeight + "px";
+    part.style.left = Math.random() * window.innerWidth + "px";
+    part.style.width = "10px";
+    part.style.height = "10px";
+    part.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    part.style.borderRadius = "50%";
+    part.style.zIndex = 999;
+    part.style.opacity = 0.8;
+    document.body.appendChild(part);
+
+    setTimeout(() => part.remove(), duration);
+  }
+}
+</script>
+
+</body>
+</html>

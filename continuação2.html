@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade Interativa - Tempo e Ordem Alfabética</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f0f8ff;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #005b99;
+    }
+    .question {
+      background-color: #e0f7fa;
+      border: 2px dashed #00acc1;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+    button {
+      background-color: #4dd0e1;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #80deea;
+    }
+    .feedback {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌦️ Atividade Interativa: Tempo, Meses e Ordem Alfabética 🌡️</h1>
+
+<div class="question">
+  <p>3️⃣6️⃣ Quem pode ajudar você a preencher os dados pessoais?</p>
+  <button onclick="responder(this, true)">👨‍👩‍👧‍👦 Um responsável ou familiar</button>
+  <button onclick="responder(this, false)">🧸 Um brinquedo</button>
+  <button onclick="responder(this, false)">🐶 Um animal de estimação</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣7️⃣ O que é importante preencher corretamente?</p>
+  <button onclick="responder(this, false)">🎨 O desenho</button>
+  <button onclick="responder(this, true)">📄 Nome, endereço e telefone</button>
+  <button onclick="responder(this, false)">🥪 O lanche preferido</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣8️⃣ Qual palavra vem primeiro na ordem alfabética?</p>
+  <button onclick="responder(this, true)">📘 ABRIL</button>
+  <button onclick="responder(this, false)">📗 AGOSTO</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣9️⃣ Qual vem antes no dicionário?</p>
+  <button onclick="responder(this, true)">📘 JANEIRO</button>
+  <button onclick="responder(this, false)">📗 JULHO</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣0️⃣ Qual palavra aparece antes no dicionário?</p>
+  <button onclick="responder(this, false)">📘 JUNHO</button>
+  <button onclick="responder(this, true)">📗 JULHO</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣1️⃣ O que o corpo humano faz quando sente frio?</p>
+  <button onclick="responder(this, true)">❄️ Tremer para gerar calor</button>
+  <button onclick="responder(this, false)">🔥 Suar</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣2️⃣ O que podemos usar para saber a temperatura?</p>
+  <button onclick="responder(this, false)">📱 Um celular</button>
+  <button onclick="responder(this, true)">🌡️ Um termômetro</button>
+  <button onclick="responder(this, false)">🧦 Uma meia</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣3️⃣ Qual desses ajuda a aquecer o corpo em dias frios?</p>
+  <button onclick="responder(this, true)">🧣 Roupa grossa</button>
+  <button onclick="responder(this, false)">🩳 Roupa curta</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣4️⃣ O que é tempo atmosférico?</p>
+  <button onclick="responder(this, true)">🌦️ Como está o ar e o céu no dia</button>
+  <button onclick="responder(this, false)">🧁 Receita de bolo</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣5️⃣ O tempo influencia em qual dessas atividades?</p>
+  <button onclick="responder(this, true)">👕 O que vamos vestir</button>
+  <button onclick="responder(this, false)">🛏️ O nome da cama</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣6️⃣ Se duas palavras começam com a mesma letra, o que devemos observar para colocá-las em ordem?</p>
+  <button onclick="responder(this, false)">📸 A figura</button>
+  <button onclick="responder(this, true)">🔠 A segunda letra</button>
+  <button onclick="responder(this, false)">🎨 A cor da palavra</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣7️⃣ Escreva seu nome completo e o telefone de um responsável:</p>
+  <textarea placeholder="Ex: Maria Zélia Vieira, (99) 99999-9999"></textarea>
+</div>
+
+<div class="question">
+  <p>4️⃣8️⃣ Que parte você mais gostou de aprender?</p>
+  <textarea placeholder="Ex: Gostei de aprender sobre o termômetro! 🌡️"></textarea>
+</div>
+
+<audio id="acerto" src="https://www.myinstants.com/media/sounds/correct-answer.mp3"></audio>
+<audio id="erro" src="https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3"></audio>
+
+<script>
+function responder(botao, correto) {
+  const feedback = botao.parentElement.querySelector('.feedback');
+  const somAcerto = document.getElementById("acerto");
+  const somErro = document.getElementById("erro");
+
+  if (correto) {
+    feedback.textContent = "✅ Muito bem!";
+    feedback.style.color = "green";
+    somAcerto.play();
+    soltaConfete();
+  } else {
+    feedback.textContent = "❌ Ops! Tente novamente.";
+    feedback.style.color = "red";
+    somErro.play();
+  }
+}
+
+function soltaConfete() {
+  const duration = 1000;
+  const colors = ['#f44336', '#4caf50', '#ffeb3b', '#2196f3'];
+
+  for (let i = 0; i < 40; i++) {
+    const part = document.createElement("div");
+    part.style.position = "fixed";
+    part.style.top = Math.random() * window.innerHeight + "px";
+    part.style.left = Math.random() * window.innerWidth + "px";
+    part.style.width = "10px";
+    part.style.height = "10px";
+    part.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    part.style.borderRadius = "50%";
+    part.style.zIndex = 999;
+    part.style.opacity = 0.8;
+    document.body.appendChild(part);
+
+    setTimeout(() => part.remove(), duration);
+  }
+}
+</script>
+
+</body>
+</html>

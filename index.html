@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensagens do Passado e do Presente</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: #fff7e6;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #cc6600;
+    }
+    .question {
+      background-color: #fff1c1;
+      border: 2px dashed #ffa500;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+    button {
+      background-color: #ffcc66;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+            text-transform: uppercase;
+
+    }
+    button:hover {
+      background-color: #ffe08a;
+            text-transform: uppercase;
+
+    }
+    .feedback {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💌 Atividade: Mensagens Ontem e Hoje 💌</h1>
+
+<div class="question">
+  <p>1️⃣ O que as pessoas usavam antigamente para mandar mensagens de parabéns?</p>
+  <button onclick="responder(this, true)">📨 Telegrama</button>
+  <button onclick="responder(this, false)">📱 WhatsApp</button>
+  <button onclick="responder(this, false)">🧙 Carta mágica</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>2️⃣ Por que o telegrama tinha que ser curto?</p>
+  <button onclick="responder(this, true)">💰 Era pago por palavra</button>
+  <button onclick="responder(this, false)">📚 Porque não sabiam escrever</button>
+  <button onclick="responder(this, false)">🙈 Ninguém queria ler</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣ Como as mensagens eram entregues antigamente?</p>
+  <button onclick="responder(this, false)">🧚 Fada</button>
+  <button onclick="responder(this, true)">📬 Carteiro</button>
+  <button onclick="responder(this, false)">🕊️ Pássaro</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣ Hoje em dia, como IANA pode mandar a mensagem para o vovô?</p>
+  <button onclick="responder(this, true)">📱 Por telefone ou internet</button>
+  <button onclick="responder(this, false)">🗣️ Gritando da janela</button>
+  <button onclick="responder(this, false)">📄 Jogando papel no vento</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>5️⃣ Qual a diferença entre mandar mensagem antes e agora?</p>
+  <textarea placeholder="Escreva com suas palavras..."></textarea>
+</div>
+
+<div class="question">
+  <p>6️⃣ Complete: Antigamente, a mensagem era enviada por...</p>
+  <button onclick="responder(this, false)">🚀 Foguete</button>
+  <button onclick="responder(this, true)">📬 Carteiro</button>
+  <button onclick="responder(this, false)">👨‍🏫 Professor</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>7️⃣ Escreva uma mensagem carinhosa para o vovô, como se fosse um telegrama:</p>
+  <textarea placeholder="Ex: Parabéns, vovô! Te amo muito! ❤️"></textarea>
+</div>
+
+<div class="question">
+  <p>8️⃣ Marque o que Guilherme poderia escrever para o vovô:</p>
+  <button onclick="responder(this, true)">✅ Vovô, feliz aniversário! 🎉</button>
+  <button onclick="responder(this, false)">📱 Quero um celular novo.</button>
+  <button onclick="responder(this, true)">❤️ Parabéns, vovô! Te amo!</button>
+  <button onclick="responder(this, false)">🎡 Me leva no parque?</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>9️⃣ Você já mandou mensagem para alguém especial?</p>
+  <button onclick="responder(this, true)">Sim</button>
+  <button onclick="responder(this, false)">Não</button><br><br>
+  Para quem foi? <input type="text" placeholder="Ex: Mamãe, tia, amigo..." />
+</div>
+
+<div class="question">
+  <p>🔟 Escreva uma mensagem de carinho para a sua professora:</p>
+  <textarea placeholder="Ex: Professora, obrigada por tudo que me ensinou! 💖"></textarea>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<audio id="acerto" src="https://www.myinstants.com/media/sounds/correct-answer.mp3"></audio>
+<audio id="erro" src="https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3"></audio>
+<p>Clique abaixo para mais atividades</p>
+<a href="continuação estudo.html" target="_blank">
+    <button>DIAS E MESES</button>
+    <a href="continuação2.html" target="_blank">
+    <button>Tempo, Meses e Ordem Alfabética</button>
+      <a href="Higiene, Emoções e Família.html" target="_blank">
+    <button>higiene, emoção e familia</button>
+     <a href="matematica.html" target="_blank">
+    <button>matematica</button>
+
+
+<script>
+function responder(botao, correto) {
+  const feedback = botao.parentElement.querySelector('.feedback');
+  const somAcerto = document.getElementById("acerto");
+  const somErro = document.getElementById("erro");
+
+  if (correto) {
+    feedback.textContent = "✅ Muito bem!";
+    feedback.style.color = "green";
+    somAcerto.play();
+    soltaConfete();
+  } else {
+    feedback.textContent = "❌ Ops! Tente novamente.";
+    feedback.style.color = "red";
+    somErro.play();
+  }
+}
+
+function soltaConfete() {
+  const duration = 1000;
+  const colors = ['#ff0', '#f0f', '#0ff', '#0f0', '#f00', '#00f'];
+
+  for (let i = 0; i < 50; i++) {
+    const part = document.createElement("div");
+    part.style.position = "fixed";
+    part.style.top = Math.random() * window.innerHeight + "px";
+    part.style.left = Math.random() * window.innerWidth + "px";
+    part.style.width = "10px";
+    part.style.height = "10px";
+    part.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    part.style.borderRadius = "50%";
+    part.style.zIndex = 999;
+    part.style.opacity = 0.7;
+    document.body.appendChild(part);
+
+    setTimeout(() => part.remove(), duration);
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividades: Higiene, Emoções e Família</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f0fff0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .question {
+      background-color: #e8f5e9;
+      border: 2px dashed #66bb6a;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+    button {
+      background-color: #81c784;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a5d6a7;
+    }
+    .feedback {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🧼👨‍👩‍👧 Atividade: Higiene, Emoções e Família 👨‍👩‍👦💧</h1>
+
+<div class="question">
+  <p>1️⃣ Em quais momentos é importante estar limpo?</p>
+  <button onclick="responder(this, true)">🏫 Ir à escola</button>
+  <button onclick="responder(this, true)">🛏 Dormir na cama</button>
+  <button onclick="responder(this, false)">🌳 Brincar na natureza</button>
+  <button onclick="responder(this, true)">🍽 Sentar-se à mesa para comer</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>2️⃣ Marque as afirmações corretas sobre higiene:</p>
+  <button onclick="responder(this, false)">🚿 Tomar banho uma vez por semana</button>
+  <button onclick="responder(this, true)">🛁 Tomar banho todos os dias</button>
+  <button onclick="responder(this, true)">🖐️ Lavar as mãos antes das refeições e após ir ao banheiro</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣ O que devemos fazer para evitar piolhos?</p>
+  <button onclick="responder(this, true)">🧼 Manter o cabelo limpo</button>
+  <button onclick="responder(this, false)">🎮 Jogar videogame</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣ Quando devemos escovar os dentes?</p>
+  <button onclick="responder(this, true)">🦷 Após as refeições e antes de dormir</button>
+  <button onclick="responder(this, false)">🍬 Só quando comer doce</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>5️⃣ Quem faz parte da sua família? Escreva os nomes ou desenhe:</p>
+  <textarea placeholder="Ex: Mamãe, Papai, Vovó, Irmão..."></textarea>
+</div>
+
+<div class="question">
+  <p>6️⃣ Como você demonstra alegria?</p>
+  <textarea placeholder="Desenhe ou escreva sua resposta"></textarea>
+</div>
+
+<div class="question">
+  <p>7️⃣ Como você demonstra tristeza?</p>
+  <textarea placeholder="Desenhe ou escreva sua resposta"></textarea>
+</div>
+
+<div class="question">
+  <p>8️⃣ Complete a sequência correta das palavras em ordem alfabética:</p>
+  <p>🔤 AGOSTO - ABRIL → <input type="text" placeholder="..." /></p>
+  <p>🔤 JULHO - JANEIRO → <input type="text" placeholder="..." /></p>
+</div>
+
+<div class="question">
+  <p>9️⃣ Qual palavra aparece primeiro no dicionário?</p>
+  <button onclick="responder(this, true)">📚 Julho</button>
+  <button onclick="responder(this, false)">📚 Junho</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>🔟 Qual aparelho usamos para medir a temperatura?</p>
+  <button onclick="responder(this, true)">🌡️ Termômetro</button>
+  <button onclick="responder(this, false)">📺 Televisão</button>
+  <button onclick="responder(this, false)">📞 Telefone</button>
+  <div class="feedback"></div>
+</div>
+
+<audio id="acerto" src="https://www.myinstants.com/media/sounds/correct-answer.mp3"></audio>
+<audio id="erro" src="https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3"></audio>
+
+<script>
+function responder(botao, correto) {
+  const feedback = botao.parentElement.querySelector('.feedback');
+  const somAcerto = document.getElementById("acerto");
+  const somErro = document.getElementById("erro");
+
+  if (correto) {
+    feedback.textContent = "✅ Muito bem!";
+    feedback.style.color = "green";
+    somAcerto.play();
+  } else {
+    feedback.textContent = "❌ Ops! Tente novamente.";
+    feedback.style.color = "red";
+    somErro.play();
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Matemática Divertida: Dezenas e Unidades</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fffbe7;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #ff5722;
+    }
+    .question {
+      background-color: #fff3e0;
+      border: 2px dashed #ffa726;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+    }
+    button {
+      background-color: #ffb74d;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ffe082;
+    }
+    .feedback {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🔢 Atividades com Dezenas e Unidades 🔢</h1>
+
+<div class="question">
+  <p>1️⃣ Quantas dezenas tem o número 23?</p>
+  <button onclick="responder(this, true)">2 dezenas</button>
+  <button onclick="responder(this, false)">3 dezenas</button>
+  <button onclick="responder(this, false)">1 dezena</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>2️⃣ Quantas unidades sobram em 23 depois de formar grupos de 10?</p>
+  <button onclick="responder(this, false)">0 unidades</button>
+  <button onclick="responder(this, false)">5 unidades</button>
+  <button onclick="responder(this, true)">3 unidades</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>3️⃣ Quem tem mais carrinhos?</p>
+  <button onclick="responder(this, false)">Pedro (5 carrinhos)</button>
+  <button onclick="responder(this, true)">João (10 carrinhos)</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>4️⃣ Quantas bolinhas Beto tem se ele tem 2 dezenas e 3 unidades?</p>
+  <button onclick="responder(this, true)">23 bolinhas</button>
+  <button onclick="responder(this, false)">20 bolinhas</button>
+  <button onclick="responder(this, false)">13 bolinhas</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>5️⃣ Quem tem mais bolinhas de gude?</p>
+  <button onclick="responder(this, false)">Caio (10 bolinhas)</button>
+  <button onclick="responder(this, true)">Beto (23 bolinhas)</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>6️⃣ Quem tem mais lápis?</p>
+  <button onclick="responder(this, false)">Bia (22 lápis)</button>
+  <button onclick="responder(this, true)">Patrícia (30 lápis)</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>7️⃣ Qual número representa uma dezena?</p>
+  <button onclick="responder(this, true)">10</button>
+  <button onclick="responder(this, false)">5</button>
+  <button onclick="responder(this, false)">2</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>8️⃣ O que é o resultado de uma adição?</p>
+  <button onclick="responder(this, false)">Subtração</button>
+  <button onclick="responder(this, false)">Multiplicação</button>
+  <button onclick="responder(this, true)">Soma</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>9️⃣ Complete: 1 dezena é igual a...</p>
+  <button onclick="responder(this, false)">5 unidades</button>
+  <button onclick="responder(this, false)">20 unidades</button>
+  <button onclick="responder(this, true)">10 unidades</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>🔟 A adição é usada para:</p>
+  <button onclick="responder(this, true)">Juntar ou somar quantidades</button>
+  <button onclick="responder(this, false)">Diminuir objetos</button>
+  <button onclick="responder(this, false)">Separar grupos</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="question">
+  <p>1️⃣1️⃣ Desenhe e escreva: Como você representa uma dezena com bolinhas?</p>
+  <textarea placeholder="Desenhe ou escreva: O que é uma dezena?"></textarea>
+</div>
+
+<audio id="acerto" src="https://www.myinstants.com/media/sounds/correct-answer.mp3"></audio>
+<audio id="erro" src="https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3"></audio>
+
+<script>
+function responder(botao, correto) {
+  const feedback = botao.parentElement.querySelector('.feedback');
+  const somAcerto = document.getElementById("acerto");
+  const somErro = document.getElementById("erro");
+
+  if (correto) {
+    feedback.textContent = "✅ Muito bem!";
+    feedback.style.color = "green";
+    somAcerto.play();
+    soltaConfete();
+  } else {
+    feedback.textContent = "❌ Ops! Tente novamente.";
+    feedback.style.color = "red";
+    somErro.play();
+  }
+}
+
+function soltaConfete() {
+  const duration = 800;
+  const colors = ['#4caf50', '#f44336', '#2196f3', '#ffeb3b'];
+
+  for (let i = 0; i < 30; i++) {
+    const part = document.createElement("div");
+    part.style.position = "fixed";
+    part.style.top = Math.random() * window.innerHeight + "px";
+    part.style.left = Math.random() * window.innerWidth + "px";
+    part.style.width = "10px";
+    part.style.height = "10px";
+    part.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    part.style.borderRadius = "50%";
+    part.style.zIndex = 999;
+    part.style.opacity = 0.8;
+    document.body.appendChild(part);
+
+    setTimeout(() => part.remove(), duration);
+  }
+}
+</script>
+
+</body>
+</html>
